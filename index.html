@@ -5,58 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atot International Hotel</title>
     <style>
-        /* Modern Deep Blue Interface */
-        html, body { 
-            margin: 0; padding: 0; width: 100%; height: 100%; 
+        /* Base styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
             font-family: 'Segoe UI', sans-serif; 
-            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+            background-color: #050a18; 
             color: #ffffff;
+            min-height: 100vh;
         }
 
+        /* Hero Section */
         .hero-viewport {
             width: 100%; min-height: 100vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             text-align: center; padding: 20px;
+            background: linear-gradient(135deg, #050a18 0%, #003366 100%);
         }
 
-        .hero-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+        .hero-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
         .hero-desc { font-size: 1.2rem; color: #a0c4ff; max-width: 600px; margin-bottom: 40px; }
 
-        .btn-blue { padding: 16px 32px; border-radius: 8px; background-color: #007bff; color: white; font-weight: bold; border: none; cursor: pointer; }
-        .btn-outline { padding: 16px 32px; border-radius: 8px; background: transparent; color: #ffffff; border: 2px solid #007bff; cursor: pointer; margin-left: 15px; }
+        .btn-blue { padding: 16px 32px; border-radius: 50px; background-color: #0066ff; color: #ffffff; font-weight: 700; border: none; cursor: pointer; text-decoration: none; }
+        .btn-outline { padding: 16px 32px; border-radius: 50px; background: transparent; color: #ffffff; border: 2px solid #ffffff; cursor: pointer; margin-left: 15px; }
 
-        /* Modal styling */
+        /* Modal Section */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 7, 20, 0.9);
+            background: rgba(5, 10, 24, 0.95);
             display: flex; justify-content: center; align-items: center;
             z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s;
         }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-content {
-            background: #002244; padding: 30px; border-radius: 15px; 
-            max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;
+            background: #0a1931; color: #ffffff; padding: 30px;
+            border-radius: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;
         }
-        .service-card { margin-bottom: 20px; border-bottom: 1px solid #004488; padding-bottom: 15px; }
-        .service-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+        .service-card { margin-bottom: 25px; border-bottom: 1px solid #1a3a60; padding-bottom: 10px; }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <div class="hero-viewport">
         <h1 class="hero-title">Atot International Hotel</h1>
-        <p class="hero-desc">Experience ultimate luxury and top-tier hospitality in the heart of Worabe.</p>
+        <p class="hero-desc">Experience ultimate luxury and premium hospitality in the heart of Worabe.</p>
         
-        <div class="button-group">
-            <button class="btn-blue" onclick="location.href='https://t.me/Zeru_Re'">Book Now</button>
+        <div>
+            <a href="https://t.me/Zeru_Re" class="btn-blue">Book Now</a>
             <button class="btn-outline" onclick="openServices()">Our Services</button>
         </div>
     </div>
 
     <div id="servicesModal" class="modal-overlay" onclick="closeServices()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 style="color:#007bff; text-align:center;">Our Services</h2>
+            <h2 style="color:#0066ff; text-align:center; margin-bottom:20px;">Our Services</h2>
             
             <div class="service-card">
                 <img src="Screenshot_20260626_184308_Maps.jpg" alt="Room">

@@ -5,80 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atot International Hotel</title>
     <style>
-        /* Base styles */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            background-color: #050a18; 
-            color: #ffffff;
-            min-height: 100vh;
-        }
+        /* Modern Luxury Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap');
 
-        /* Hero Section */
-        .hero-viewport {
-            width: 100%; min-height: 100vh;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #0c111d; color: #ffffff; }
+
+        .hero {
+            height: 100vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            text-align: center; padding: 20px;
-            background: linear-gradient(135deg, #050a18 0%, #003366 100%);
+            background: linear-gradient(rgba(12, 17, 29, 0.7), rgba(12, 17, 29, 0.7)), url('Screenshot_20260626_184340_Maps.jpg');
+            background-size: cover; background-position: center;
+            text-align: center;
         }
 
-        .hero-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
-        .hero-desc { font-size: 1.2rem; color: #a0c4ff; max-width: 600px; margin-bottom: 40px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 10px; color: #d4af37; }
+        .hero p { font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
 
-        .btn-blue { padding: 16px 32px; border-radius: 50px; background-color: #0066ff; color: #ffffff; font-weight: 700; border: none; cursor: pointer; text-decoration: none; }
-        .btn-outline { padding: 16px 32px; border-radius: 50px; background: transparent; color: #ffffff; border: 2px solid #ffffff; cursor: pointer; margin-left: 15px; }
+        .btn-gold {
+            padding: 15px 40px; background: transparent; border: 1px solid #d4af37;
+            color: #d4af37; cursor: pointer; transition: 0.3s; font-size: 1rem;
+        }
+        .btn-gold:hover { background: #d4af37; color: #000; }
 
-        /* Modal Section */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 10, 24, 0.95);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s;
+        /* Simple Modal */
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
         }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-content {
-            background: #0a1931; color: #ffffff; padding: 30px;
-            border-radius: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;
-        }
-        .service-card { margin-bottom: 25px; border-bottom: 1px solid #1a3a60; padding-bottom: 10px; }
-        .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+        .modal-content { background: #1a1a1a; padding: 40px; border-radius: 5px; width: 80%; max-width: 600px; }
     </style>
 </head>
 <body>
 
-    <div class="hero-viewport">
-        <h1 class="hero-title">Atot International Hotel</h1>
-        <p class="hero-desc">Experience ultimate luxury and premium hospitality in the heart of Worabe.</p>
-        
-        <div>
-            <a href="https://t.me/Zeru_Re" class="btn-blue">Book Now</a>
-            <button class="btn-outline" onclick="openServices()">Our Services</button>
-        </div>
+    <div class="hero">
+        <h1>Atot International Hotel</h1>
+        <p>Luxury & Comfort in Worabe</p>
+        <button class="btn-gold" onclick="location.href='https://t.me/Zeru_Re'">BOOK YOUR STAY</button>
     </div>
 
-    <div id="servicesModal" class="modal-overlay" onclick="closeServices()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 style="color:#0066ff; text-align:center; margin-bottom:20px;">Our Services</h2>
-            
-            <div class="service-card">
-                <img src="Screenshot_20260626_184308_Maps.jpg" alt="Room">
-                <h3>Luxury Rooms</h3>
-            </div>
-            <div class="service-card">
-                <img src="Screenshot_20260626_184340_Maps.jpg" alt="Food">
-                <h3>Restaurant & Bar</h3>
-            </div>
-            <div class="service-card">
-                <img src="Screenshot_20260626_184329_Maps.jpg" alt="Hall">
-                <h3>Conference Hall</h3>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openServices() { document.getElementById('servicesModal').classList.add('active'); }
-        function closeServices() { document.getElementById('servicesModal').classList.remove('active'); }
-    </script>
 </body>
 </html>

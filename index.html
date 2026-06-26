@@ -5,27 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atot International Hotel</title>
     <style>
-        html, body {
-            margin: 0; padding: 0; width: 100%; height: 100%;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #050a18;
-            color: #ffffff;
-        }
-        /* የህንፃው ፎቶ እንደ ዳራ */
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: sans-serif; background-color: #050a18; color: #ffffff; }
+        
+        /* የህንፃው ፎቶ እንደ ዳራ - እዚህ ጋር የሰቀልከውን ስም አስገባሁልህ */
         body {
-            background-image: url('atot.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-image: url('IMG_20260620_082249_953.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
+        
         .hero-viewport {
             width: 100%; min-height: 100vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             text-align: center; padding: 20px;
-            background: rgba(5, 10, 24, 0.85); /* ፎቶው ላይ ትንሽ ሰማያዊ ጥላ እንዲኖረው */
+            background: rgba(5, 10, 24, 0.85);
         }
-        .hero-title { font-size: 3.2rem; font-weight: 800; margin: 0 0 20px 0; }
         .custom-btn {
             padding: 16px 32px; font-weight: 700; border-radius: 50px;
             text-decoration: none; cursor: pointer; border: none; margin: 10px;
@@ -43,18 +37,17 @@
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-content {
             background: #ffffff; color: #050a18; padding: 30px;
-            border-radius: 20px; max-width: 500px; width: 90%;
+            border-radius: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;
         }
-        .service-card { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .service-card { margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
         .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <div class="hero-viewport">
-        <h1 class="hero-title">Atot International Hotel</h1>
-        <p>Experience ultimate luxury in Worabe.</p>
-        
+        <h1>Atot International Hotel</h1>
+        <p>Experience luxury in the heart of Worabe.</p>
         <div class="button-group">
             <a href="https://t.me/Zeru_Re" class="custom-btn btn-blue">Book Now</a>
             <button onclick="openServices()" class="custom-btn btn-outline">Our Services</button>
@@ -63,14 +56,14 @@
 
     <div id="servicesModal" class="modal-overlay" onclick="closeServices()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 style="color:#0066ff;">Our Services</h2>
+            <h2 style="color:#0066ff; text-align:center;">Our Services</h2>
             
             <div class="service-card">
-                <img src="Room.jpg" alt="Rooms">
+                <img src="IMG_20260609_220416_771.jpg" alt="Room">
                 <h3>Luxury Rooms</h3>
             </div>
             <div class="service-card">
-                <img src="Food.jpg" alt="Food">
+                <img src="IMG_20260531_195932_052.jpg" alt="Food">
                 <h3>Delicious Food</h3>
             </div>
             <div class="service-card">
